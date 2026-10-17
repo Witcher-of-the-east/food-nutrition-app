@@ -1,0 +1,36 @@
+dish_name           , model_label  , serving        , serving_g, calories, protein_g, carbs_g, fat_g, fibre_g, source
+burger              , burger       , 1 burger       ,       150,      300,      15  ,    30  ,  14  ,     2  , EXAMPLE
+butter_naan         , butter_naan  , 1 piece        ,        90,      260,       7  ,    45  ,   6  ,     2  , EXAMPLE
+chai                , chai         , 1 cup          ,       150,       90,       2.5,    12  ,   3.5,     0  , EXAMPLE
+roti                , chapati      , 1 medium roti  ,        40,      120,       3.5,    22  ,   2  ,     2  , EXAMPLE
+chole_bhature       , chole_bhature, 1 plate        ,       300,      550,      14  ,    70  ,  24  ,     8  , EXAMPLE
+dal_makhani         , dal_makhani  , 1 katori       ,       150,      230,       8  ,    18  ,  14  ,     5  , EXAMPLE
+dhokla              , dhokla       , 2 pieces       ,        80,      120,       4  ,    18  ,   3.5,     1  , EXAMPLE
+fried_rice          , fried_rice   , 1 plate        ,       200,      330,       7  ,    50  ,  11  ,     2  , EXAMPLE
+idli                , idli         , 2 pieces       ,        80,      110,       3.5,    22  ,   0.5,     1  , EXAMPLE
+jalebi              , jalebi       , 2 pieces       ,        60,      260,       2  ,    40  ,  10  ,     0.5, EXAMPLE
+kaathi_rolls        , kaathi_rolls , 1 roll         ,       150,      350,      12  ,    38  ,  16  ,     3  , EXAMPLE
+kadai_paneer        , kadai_paneer , 1 katori       ,       150,      300,      12  ,     8  ,  24  ,     2  , EXAMPLE
+kulfi               , kulfi        , 1 piece        ,        80,      200,       5  ,    22  ,  10  ,     0  , EXAMPLE
+masala_dosa         , masala_dosa  , 1 dosa         ,       150,      250,       5  ,    36  ,   9  ,     2  , EXAMPLE
+momos               , momos        , 5 pieces       ,       100,      200,       8  ,    28  ,   6  ,     2  , EXAMPLE
+paani_puri          , paani_puri   , 6 pieces       ,       120,      200,       4  ,    32  ,   6  ,     3  , EXAMPLE
+pakode              , pakode       , 5 pieces       ,        80,      250,       6  ,    20  ,  16  ,     3  , EXAMPLE
+pav_bhaji           , pav_bhaji    , 1 plate        ,       250,      400,      10  ,    55  ,  16  ,     6  , EXAMPLE
+pizza               , pizza        , 1 slice        ,       100,      270,      11  ,    33  ,  10  ,     2  , EXAMPLE
+samosa              , samosa       , 1 piece        ,        60,      150,       3  ,    18  ,   8  ,     1.5, EXAMPLE
+plain_rice          , none         , 1 katori cooked,       150,      195,       4  ,    43  ,   0.4,     0.6, EXAMPLE
+dal_tadka           , none         , 1 katori       ,       150,      180,       9  ,    22  ,   6  ,     5  , EXAMPLE
+poha                , none         , 1 plate        ,       150,      250,       5  ,    45  ,   6  ,     3  , EXAMPLE
+upma                , none         , 1 plate        ,       150,      220,       5  ,    35  ,   7  ,     3  , EXAMPLE
+paratha             , none         , 1 piece        ,        80,      260,       5  ,    35  ,  11  ,     3  , EXAMPLE
+rajma               , none         , 1 katori       ,       150,      200,       9  ,    30  ,   4  ,     7  , EXAMPLE
+aloo_gobi           , none         , 1 katori       ,       150,      150,       3  ,    17  ,   8  ,     3  , EXAMPLE
+bhindi_masala       , none         , 1 katori       ,       150,      120,       3  ,    10  ,   8  ,     4  , EXAMPLE
+palak_paneer        , none         , 1 katori       ,       150,      230,      11  ,     8  ,  17  ,     3  , EXAMPLE
+paneer_butter_masala, none         , 1 katori       ,       150,      320,      12  ,    10  ,  26  ,     2  , EXAMPLE
+gulab_jamun         , none         , 2 pieces       ,        80,      300,       4  ,    45  ,  12  ,     0.5, EXAMPLE
+biryani             , none         , 1 plate        ,       250,      400,      15  ,    55  ,  13  ,     3  , EXAMPLE
+boiled_egg          , none         , 1 egg          ,        50,       78,       6  ,     0.6,   5  ,     0  , EXAMPLE
+curd                , none         , 1 katori       ,       100,       60,       3.5,     5  ,   3  ,     0  , EXAMPLE
+sambar              , none         , 1 katori       ,       150,      100,       5  ,    15  ,   2.5,     4  , EXAMPLE
