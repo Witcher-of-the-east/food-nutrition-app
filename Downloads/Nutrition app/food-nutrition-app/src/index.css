@@ -13,8 +13,11 @@ body {
 }
 
 .app-container {
-  width: 375px;
+  width: 100%;
+  max-width: 391px;
   height: 750px;
+  max-height: 100dvh;
+  box-sizing: border-box;
   background-color: #FAF9F5;
   border-radius: 35px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -157,6 +160,9 @@ body {
   justify-content: space-around;
   align-items: center;
   border-top: 1px solid #E2E8F0;
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
 }
 
 .fab-btn {
@@ -593,4 +599,14 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 15px;
+}
+@media (max-width: 500px) {
+  body { align-items: stretch; min-height: 100dvh; }
+  .app-container {
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    border: none;
+    border-radius: 0;
+  }
 }

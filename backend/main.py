@@ -253,3 +253,9 @@ def dataset_stats():
             counts[d] = len(os.listdir(os.path.join(DATASET_DIR, d)))
     return {"photos_per_dish": counts, "total": sum(counts.values()),
             "not_in_csv": [d for d in counts if d not in by_dish]}
+# ---------- frontend ko isi server se dikhao ----------
+from fastapi.staticfiles import StaticFiles
+
+FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "dist")
+if os.path.isdir(FRONTEND_DIR):
+    app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
