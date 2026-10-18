@@ -1,7 +1,7 @@
 // Laptop pe localhost, phone pe laptop ka IP apne aap use hoga
 const BASE_URL =
-  import.meta.env.VITE_API_URL || `http://${window.location.hostname}:8000`;
-
+  import.meta.env.VITE_API_URL ??
+  (import.meta.env.PROD ? '' : `http://${window.location.hostname}:8000`);
 // 1. POST /predict
 export async function predictDish(file) {
   const formData = new FormData();
