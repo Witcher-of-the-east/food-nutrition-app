@@ -13,6 +13,7 @@ const userHeaders = () => ({ 'X-User-Id': userId });
 const BASE_URL =
   import.meta.env.VITE_API_URL ??
   (import.meta.env.PROD ? '' : `http://${window.location.hostname}:8000`);
+
 // 1. POST /predict
 export async function predictDish(file) {
   const formData = new FormData();
@@ -46,6 +47,7 @@ export async function getTodayMeals() {
   if (!response.ok) throw new Error(`Today meals API error: ${response.statusText}`);
   return await response.json();
 }
+
 // 5. GET /dishes  (typing ke suggestions)
 export async function getDishes() {
   const response = await fetch(`${BASE_URL}/dishes`, { headers: userHeaders() });
@@ -85,7 +87,6 @@ export async function getRecentMeals(limit = 10) {
   const data = await response.json();
   return Array.isArray(data) ? data : (data.meals || data.results || []);
 }
-
 
 export async function getActivityToday() {
   const response = await fetch(`${BASE_URL}/activity/today`, { headers: userHeaders() });
