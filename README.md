@@ -42,3 +42,25 @@ cd food-nutrition-app
 
 # Install npm dependencies
 npm install
+
+## Week 2 frontend work (Abhijeet)
+
+Implemented in this branch/work package:
+- Fixed the screen layout so the main content area scrolls while the bottom navigation stays in place.
+- Added screen, button, modal, progress-ring and notification animations, with reduced-motion support.
+- Connected the food search UI to `GET /search?q=...` with a 250 ms debounce and graceful handling if the endpoint is not available.
+- Added browser voice search (`en-IN`) where `SpeechRecognition` is supported.
+- Replaced mock recent-food rows with `GET /meals/recent?limit=10`; selecting a recent meal attempts to log it again.
+- Added Plate, Bowl and Glass camera guides and a crop-confirmation step. The confirmed cropped image is sent to the existing prediction API.
+- Added the Activity navigation screen and Home's burned-calorie display, using `GET /activity/today` when the backend endpoint is available.
+- Added a stable browser-generated `X-User-Id` header to frontend API requests.
+- Replaced the capture-flow browser alerts with an in-app status toast.
+
+### Backend integration contract
+
+The frontend now expects these Week 2 endpoints to be available from the backend:
+- `GET /search?q=<query>` returning `{ "results": [{ "dish": "paneer", "score": 92 }] }`
+- `GET /meals/recent?limit=10` returning an array of meal records (or `{ "meals": [...] }`)
+- `GET /activity/today` returning fields such as `steps`, `kcal_burned` (or `calories_burned`) and `active_minutes`
+
+These endpoints are part of the Week 2 integration plan and may not exist in the current backend branch yet. The UI shows a helpful message if Activity data is unavailable. Fuzzy search requires the backend to implement the planned alias matching; the frontend debounce alone does not provide fuzzy matching.

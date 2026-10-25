@@ -1,8 +1,13 @@
 import React from 'react';
 import { Icons } from '../assets/icons';
 
-export default function MealSummary({ category, scannedItem, portion, onHome }) {
-  const totalCalories = 150 + (scannedItem ? Math.round(scannedItem.calories * portion) : 0);
+const prettyName = (d) => d.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+
+export default function MealSummary({ category, today, onHome }) {
+  const categoryMeals = (today?.meals || []).filter(
+    (m) => (m.category || 'Snack') === category
+  );
+  const totalCalories = Math.round(today?.by_category?.[category] || 0);
 
   return (
     <div className="screen" style={{ backgroundColor: '#EDF2F7' }}>
@@ -12,7 +17,6 @@ export default function MealSummary({ category, scannedItem, portion, onHome }) 
         </button>
         <h2 style={{ margin: '10px 0 0 0' }}>{category}</h2>
         <span style={{ fontSize: 12, color: '#718096' }}>Recommended portion: 450-500 kcal</span>
-
         <div className="summary-ring">
           <Icons.Lightning />
           <span style={{ fontSize: 24, fontWeight: 'bold' }}>{totalCalories}</span>
@@ -22,24 +26,28 @@ export default function MealSummary({ category, scannedItem, portion, onHome }) 
 
       <div className="content-body">
         <h5 className="section-heading">Food</h5>
-        {scannedItem && (
-          <div className="food-list-item">
-            <img src={scannedItem.image} className="food-thumb" alt={scannedItem.dish} />
+        {categoryMeals.length === 0 && (
+          <p className="food-list-sub">Nothing logged yet</p>
+        )}
+        {categoryMeals.map((m, i) => (
+          <div className="food-list-item" key={i}>
+            <div
+              className="food-thumb"
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: '#F7FAFC', fontSize: 22,
+              }}
+            >
+              🍽️
+            </div>
             <div style={{ flex: 1, marginLeft: 10 }}>
-              <b>{scannedItem.dish}</b>
+              <b>{prettyName(m.dish)}</b>
               <p className="food-list-sub">
-                {Math.round(scannedItem.calories * portion)}kcal - 1 burger
+                {Math.round(m.calories)}kcal - {m.servings} serving
               </p>
             </div>
           </div>
-        )}
-        <div className="food-list-item">
-          <img src="/images/hotdog.png" className="food-thumb" alt="Hotdog" />
-          <div style={{ flex: 1, marginLeft: 10 }}>
-            <b>Hotdog</b>
-            <p className="food-list-sub">150kcal - 1 hotdog</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
