@@ -125,4 +125,3 @@ export default function HomeDashboard({ onOpenLog, onOpenActivity, onOpenCamera,
   );
 }
 
-}
